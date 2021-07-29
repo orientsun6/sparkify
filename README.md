@@ -14,7 +14,7 @@ For this project, We are studying the event log data of users of Sparkify, a mus
 
 ## Problem Statement<a name="statement"></a>
 
-Can we can extract from the user event logs to feed into a classification machine learning model to predict the churning users?
+We are trying to generate user statistics from the user event log data and use a machine learning model to predict the churning users.
 
 ## Metrics<a name="metrics"></a>
 
@@ -36,9 +36,13 @@ After loading the data set, we conducted a series of operations to extract featu
 
 We built 3 models: logistic regression, decision tree classifier and random forest with the generated features and train the data on the training set while use the test set to measure the final performance of each model.
 
+Among the 3 models: logistic regression, decision tree classifier and random forest, they all over achieved accuray s with accuracy around 70%. The Logistic Regression model has the highest accuracy at around 70.27%.
+
+We used 3 fold cross validation to fine-tune the models, on the "regParam" and "elasticNetParam" of the Logistic Regression, the overall accuracy improved a bit to around 70.37% on the testing set.
+
 ## Results<a name="results"></a>
 
-Among the 3 models: logistic regression, decision tree classifier and random forest, they all over achieved accuray over 75%, while decision tree classifier model was able to achieve the highest accuray of 79%.
+After the model selection and hyperparameter tuning, the logistic regression model achieved around 70.37%.
 
 The main findings of the code can be found at the post available [here](https://orientsun6.medium.com/predicting-user-churn-with-pyspark-5f5fb0fdb835).
 
